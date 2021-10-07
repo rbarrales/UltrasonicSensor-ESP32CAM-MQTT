@@ -26,8 +26,8 @@ const char* ssid = "AXTEL XTREMO-87E0";  // Aquí debes poner el nombre de tu re
 const char* password = "036A87E0";  // Aquí debes poner la contraseña de tu red
 
 //Datos del broker MQTT
-const char* mqtt_server = "192.168.15.7"; // Si estas en una red local, coloca la IP asignada, en caso contrario, coloca la IP publica
-IPAddress server(192,168,15,7);
+const char* mqtt_server = "18.194.65.151"; // Si estas en una red local, coloca la IP asignada, en caso contrario, coloca la IP publica
+IPAddress server(18,194,65,151);
 
 // Variables
 int flashLedPin = 4;  // Para indicar el estatus de conexión
@@ -106,9 +106,9 @@ void loop() {
     
     char dataString[8]; // Define una arreglo de caracteres para enviarlos por MQTT, especifica la longitud del mensaje en 8 caracteres
     dtostrf(distancia, 1, 2, dataString);  // Esta es una función nativa de leguaje AVR que convierte un arreglo de caracteres en una variable String
-    Serial.print("Contador: "); // Se imprime en monitor solo para poder visualizar que el evento sucede
+    Serial.print("Distancia: "); // Se imprime en monitor solo para poder visualizar que el evento sucede
     Serial.println(dataString);
-    client.publish("esp32/data", dataString); // Esta es la función que envía los datos por MQTT, especifica el tema y el valor
+    client.publish("codigoiot/distancia/Raymundo Barrales", dataString); // Esta es la función que envía los datos por MQTT, especifica el tema y el valor
   }// fin del if (timeNow - timeLast > wait)
 }// fin del void loop ()
 
