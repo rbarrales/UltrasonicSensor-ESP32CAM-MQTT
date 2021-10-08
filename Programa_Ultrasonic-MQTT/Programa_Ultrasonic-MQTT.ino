@@ -160,11 +160,11 @@ void reconnect() {
       client.subscribe("codigoiot/respuesta/Raymundo Barrales"); // Esta función realiza la suscripción al tema
     }// fin del  if (client.connect("ESP32CAMClient"))
     else {  //en caso de que la conexión no se logre
-      Serial.print("Conexion fallida, Error rc=");
+      Serial.print("Error=");
       Serial.print(client.state()); // Muestra el codigo de error
-      Serial.println(" Volviendo a intentar en 5 segundos");
-      // Espera de 5 segundos bloqueante
-      delay(5000);
+      Serial.println(">"); //> significa "Se reintenta conexión"
+      // Espera de 0.5 s bloqueante
+      delay(500);
       Serial.println (client.connected ()); // Muestra estatus de conexión
     }// fin del else
   }// fin del bucle while (!client.connected())
