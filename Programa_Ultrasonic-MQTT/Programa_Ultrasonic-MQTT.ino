@@ -26,8 +26,8 @@ const char* ssid = "AXTEL XTREMO-87E0";  // Aquí debes poner el nombre de tu re
 const char* password = "036A87E0";  // Aquí debes poner la contraseña de tu red
 
 //Datos del broker MQTT
-const char* mqtt_server = "18.194.65.151"; // Si estas en una red local, coloca la IP asignada, en caso contrario, coloca la IP publica
-IPAddress server(18,194,65,151);
+const char* mqtt_server = "192.168.15.7"; // Si estas en una red local, coloca la IP asignada, en caso contrario, coloca la IP publica
+IPAddress server(192,168,15,7);
 
 // Variables
 int flashLedPin = 4;  // Para indicar el estatus de conexión
