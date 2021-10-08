@@ -153,10 +153,10 @@ void callback(char* topic, byte* message, unsigned int length) {
 void reconnect() {
   // Bucle hasta lograr conexión
   while (!client.connected()) { // Pregunta si hay conexión
-    Serial.print("Tratando de contectarse...");
+    Serial.print("-"); //- significa "Haciendo conexión..."
     // Intentar reconexión
     if (client.connect("ESP32CAMClient")) { //Pregunta por el resultado del intento de conexión
-      Serial.println("Conectado");
+      Serial.println("*"); //* significa "Conectado"
       client.subscribe("codigoiot/respuesta/Raymundo Barrales"); // Esta función realiza la suscripción al tema
     }// fin del  if (client.connect("ESP32CAMClient"))
     else {  //en caso de que la conexión no se logre
